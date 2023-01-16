@@ -14,29 +14,38 @@ abstract class BaseRequest
     /**
      * @internal
      *
-     * @var array
+     * @var string
      */
-    protected $config;
+    protected $serverKey;
+
+    /**
+     * @internal
+     *
+     * @var string
+     */
+    protected $senderId;
 
     /**
      * BaseRequest constructor.
      */
     public function __construct()
     {
-        $this->config = app('config')->get('fcm.http', []);
+        $config = app('config')->get('fcm.http', []);
+        $this->serverKey = $config['server_key'];
+        $this->senderId = $config['sender_id'];
     }
 
     /**
      * Build the header for the request.
      *
-     * @return array
+     * @return array<string,string>
      */
     protected function buildRequestHeader()
     {
         return [
-            'Authorization' => 'key=' . $this->config['server_key'],
+            'Authorization' => 'key=' . $this->serverKey,
             'Content-Type' => 'application/json',
-            'project_id' => $this->config['sender_id'],
+            'project_id' => $this->senderId,
         ];
     }
 
