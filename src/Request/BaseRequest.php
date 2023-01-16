@@ -16,23 +16,37 @@ abstract class BaseRequest
      *
      * @var string
      */
-    protected $serverKey;
+    protected $serverKey = null;
 
     /**
      * @internal
      *
      * @var string
      */
-    protected $senderId;
+    protected $senderId = null;
 
     /**
-     * BaseRequest constructor.
+     * Build a new BaseRequest
+     *
+     * @param string $serverKey The server key
+     * @param string $senderId The sender Id
      */
-    public function __construct()
+    public function __construct(string $serverKey = null, string $senderId = null)
     {
-        $config = app('config')->get('fcm.http', []);
-        $this->serverKey = $config['server_key'];
-        $this->senderId = $config['sender_id'];
+        if ($serverKey !== null) {
+            $this->serverKey = $serverKey;
+        }
+
+        if ($senderId !== null) {
+            $this->senderId = $senderId;
+        }
+
+        // They may have been already filled
+        if ($this->serverKey === null || $this->senderId === null) {
+            $config = app('config')->get('fcm.http', []);
+            $this->serverKey = $config['server_key'];
+            $this->senderId = $config['sender_id'];
+        }
     }
 
     /**
