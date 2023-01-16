@@ -38,6 +38,7 @@ class **GroupResponse**        extends [<abbr title="LaravelFCM\Response\BaseRes
 |---|---|---|---|
 |<a name="property_logEnabled"></a>protected bool|$logEnabled||<small>from&nbsp;[../../LaravelFCM/Response/BaseResponse.md#property_logEnabled](<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>)</small>|
 |<a name="property_logger"></a>protected <abbr title="Monolog\Logger">Logger</abbr>|$logger|The logger.|<small>from&nbsp;[../../LaravelFCM/Response/BaseResponse.md#property_logger](<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>)</small>|
+|<a name="property_retryAfter"></a> int|string|null|$retryAfter|The value of the first Retry-After header in the response.|<small>from&nbsp;[../../LaravelFCM/Response/BaseResponse.md#property_retryAfter](<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>)</small>|
 |<a name="property_numberTokensSuccess"></a>protected int|$numberTokensSuccess|||
 |<a name="property_numberTokensFailure"></a>protected int|$numberTokensFailure|||
 |<a name="property_tokensFailed"></a>protected array|$tokensFailed|||
@@ -47,6 +48,7 @@ class **GroupResponse**        extends [<abbr title="LaravelFCM\Response\BaseRes
 |   |   |   |   |
 |---|---|---|---|
 ||<a name="#method___construct"></a>__construct(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response, string $to, <abbr title="Monolog\Logger">Logger</abbr> $logger)|GroupResponse constructor.||
+|int|string|null|<a name="#method_getRetryAfterHeaderValue"></a>getRetryAfterHeaderValue()|No description|from&nbsp;[../../LaravelFCM/Response/BaseResponse.md#method_getRetryAfterHeaderValue](<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>)|
 |void|<a name="#method_parseResponse"></a>parseResponse(array $responseInJson)|parse the response.||
 |void|<a name="#method_logResponse"></a>logResponse()|Log the response.||
 |int|<a name="#method_numberSuccess"></a>numberSuccess()|Get the number of device reached with success.||
@@ -69,6 +71,21 @@ GroupResponse constructor.
 |   |   |   |
 |---|---|---|
 |<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr>|$response||string|$to||<abbr title="Monolog\Logger">Logger</abbr>|$logger|
+<a name id="method_getRetryAfterHeaderValue"></a>
+
+### 
+ int|string|null **getRetryAfterHeaderValue**()in [../../LaravelFCM/Response/BaseResponse.md#method_getRetryAfterHeaderValue](<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>)
+
+[at line 83](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/BaseResponse.php#L83)
+
+
+
+#### Return Value
+
+|   |   |
+|---|---|
+|int|string|null|
+
 <a name id="method_parseResponse"></a>
 
 ### 

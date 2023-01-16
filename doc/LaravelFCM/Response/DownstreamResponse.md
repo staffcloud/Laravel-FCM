@@ -47,6 +47,7 @@ class **DownstreamResponse**        extends [<abbr title="LaravelFCM\Response\Ba
 |---|---|---|---|
 |<a name="property_logEnabled"></a>protected bool|$logEnabled||<small>from&nbsp;[../../LaravelFCM/Response/BaseResponse.md#property_logEnabled](<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>)</small>|
 |<a name="property_logger"></a>protected <abbr title="Monolog\Logger">Logger</abbr>|$logger|The logger.|<small>from&nbsp;[../../LaravelFCM/Response/BaseResponse.md#property_logger](<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>)</small>|
+|<a name="property_retryAfter"></a> int|string|null|$retryAfter|The value of the first Retry-After header in the response.|<small>from&nbsp;[../../LaravelFCM/Response/BaseResponse.md#property_retryAfter](<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>)</small>|
 |<a name="property_numberTokensSuccess"></a>protected int|$numberTokensSuccess|||
 |<a name="property_numberTokensFailure"></a>protected int|$numberTokensFailure|||
 |<a name="property_numberTokenModify"></a>protected int|$numberTokenModify|||
@@ -61,8 +62,10 @@ class **DownstreamResponse**        extends [<abbr title="LaravelFCM\Response\Ba
 |   |   |   |   |
 |---|---|---|---|
 ||<a name="#method___construct"></a>__construct(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response, array|string $tokens, <abbr title="Monolog\Logger">Logger</abbr> $logger)|DownstreamResponse constructor.||
+|int|string|null|<a name="#method_getRetryAfterHeaderValue"></a>getRetryAfterHeaderValue()|No description|from&nbsp;[../../LaravelFCM/Response/BaseResponse.md#method_getRetryAfterHeaderValue](<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>)|
 |void|<a name="#method_parseResponse"></a>parseResponse(array $responseInJson)|Parse the response.||
 |void|<a name="#method_logResponse"></a>logResponse()|No description||
+|static&nbsp;int|string|null|<a name="#method_getRetryAfterHeader"></a>getRetryAfterHeader(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response)|No description||
 ||<a name="#method_merge"></a>merge([<abbr title="LaravelFCM\Response\DownstreamResponse">DownstreamResponse</abbr>](../../LaravelFCM/Response/DownstreamResponse.md) $response)|Merge two response.||
 |int|<a name="#method_numberSuccess"></a>numberSuccess()|Get the number of device reached with success.||
 |int|<a name="#method_numberFailure"></a>numberFailure()|Get the number of device which thrown an error.||
@@ -89,6 +92,21 @@ DownstreamResponse constructor.
 |   |   |   |
 |---|---|---|
 |<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr>|$response||array|string|$tokens||<abbr title="Monolog\Logger">Logger</abbr>|$logger|
+<a name id="method_getRetryAfterHeaderValue"></a>
+
+### 
+ int|string|null **getRetryAfterHeaderValue**()in [../../LaravelFCM/Response/BaseResponse.md#method_getRetryAfterHeaderValue](<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>)
+
+[at line 83](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/BaseResponse.php#L83)
+
+
+
+#### Return Value
+
+|   |   |
+|---|---|
+|int|string|null|
+
 <a name id="method_parseResponse"></a>
 
 ### 
@@ -115,7 +133,7 @@ Parse the response.
 ### 
 protected void **logResponse**()
 
-[at line 293](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L293)
+[at line 308](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L308)
 
 
 
@@ -125,12 +143,33 @@ protected void **logResponse**()
 |---|---|
 |void|
 
+<a name id="method_getRetryAfterHeader"></a>
+
+### 
+static int|string|null **getRetryAfterHeader**(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response)
+
+[at line 129](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L129)
+
+
+
+#### Parameters
+
+|   |   |   |
+|---|---|---|
+|<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr>|$response|
+
+#### Return Value
+
+|   |   |
+|---|---|
+|int|string|null|
+
 <a name id="method_merge"></a>
 
 ### 
   **merge**([<abbr title="LaravelFCM\Response\DownstreamResponse">DownstreamResponse</abbr>](../../LaravelFCM/Response/DownstreamResponse.md) $response)
 
-[at line 309](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L309)
+[at line 324](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L324)
 
 Merge two response.        
 
@@ -144,7 +183,7 @@ Merge two response.
 ### 
  int **numberSuccess**()
 
-[at line 326](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L326)
+[at line 341](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L341)
 
 Get the number of device reached with success.        
 
@@ -159,7 +198,7 @@ Get the number of device reached with success.
 ### 
  int **numberFailure**()
 
-[at line 336](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L336)
+[at line 351](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L351)
 
 Get the number of device which thrown an error.        
 
@@ -174,7 +213,7 @@ Get the number of device which thrown an error.
 ### 
  int **numberModification**()
 
-[at line 346](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L346)
+[at line 361](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L361)
 
 Get the number of device that you need to modify their token.        
 
@@ -189,7 +228,7 @@ Get the number of device that you need to modify their token.
 ### 
  array **tokensToDelete**()
 
-[at line 358](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L358)
+[at line 373](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L373)
 
 get token to delete.        remove all tokens returned by this method in your database
 
@@ -204,7 +243,7 @@ get token to delete.        remove all tokens returned by this method in your da
 ### 
  array **tokensToModify**()
 
-[at line 373](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L373)
+[at line 388](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L388)
 
 get token to modify.        key: oldToken
 value: new token
@@ -222,7 +261,7 @@ find the old token in your database and replace it with the new one
 ### 
  array **tokensToRetry**()
 
-[at line 383](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L383)
+[at line 398](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L398)
 
 Get tokens that you should resend using exponential backoff.        
 
@@ -237,7 +276,7 @@ Get tokens that you should resend using exponential backoff.
 ### 
  array **tokensWithError**()
 
-[at line 398](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L398)
+[at line 413](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L413)
 
 Get tokens that thrown an error.        key : token
 value : error
@@ -255,7 +294,7 @@ In production, remove these tokens from you database
 ### 
  bool **hasMissingToken**()
 
-[at line 409](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L409)
+[at line 424](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/DownstreamResponse.php#L424)
 
 check if missing tokens was given to the request
 If true, remove all the empty token in your database.        

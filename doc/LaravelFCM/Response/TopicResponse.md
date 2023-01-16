@@ -38,6 +38,7 @@ class **TopicResponse**        extends [<abbr title="LaravelFCM\Response\BaseRes
 |---|---|---|---|
 |<a name="property_logEnabled"></a>protected bool|$logEnabled||<small>from&nbsp;[../../LaravelFCM/Response/BaseResponse.md#property_logEnabled](<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>)</small>|
 |<a name="property_logger"></a>protected <abbr title="Monolog\Logger">Logger</abbr>|$logger|The logger.|<small>from&nbsp;[../../LaravelFCM/Response/BaseResponse.md#property_logger](<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>)</small>|
+|<a name="property_retryAfter"></a> int|string|null|$retryAfter|The value of the first Retry-After header in the response.|<small>from&nbsp;[../../LaravelFCM/Response/BaseResponse.md#property_retryAfter](<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>)</small>|
 |<a name="property_topic"></a>protected [<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md)|$topic|||
 |<a name="property_messageId"></a>protected string|$messageId|||
 |<a name="property_error"></a>protected string|$error|||
@@ -47,6 +48,7 @@ class **TopicResponse**        extends [<abbr title="LaravelFCM\Response\BaseRes
 |   |   |   |   |
 |---|---|---|---|
 ||<a name="#method___construct"></a>__construct(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response, [<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md) $topic, <abbr title="Monolog\Logger">Logger</abbr> $logger)|TopicResponse constructor.||
+|int|string|null|<a name="#method_getRetryAfterHeaderValue"></a>getRetryAfterHeaderValue()|No description|from&nbsp;[../../LaravelFCM/Response/BaseResponse.md#method_getRetryAfterHeaderValue](<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>)|
 |void|<a name="#method_parseResponse"></a>parseResponse(array $responseInJson)|parse the response.||
 |void|<a name="#method_logResponse"></a>logResponse()|Log the response.||
 |bool|<a name="#method_isSuccess"></a>isSuccess()|true if topic sent with success.||
@@ -69,6 +71,21 @@ TopicResponse constructor.
 |   |   |   |
 |---|---|---|
 |<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr>|$response||[<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md)|$topic||<abbr title="Monolog\Logger">Logger</abbr>|$logger|
+<a name id="method_getRetryAfterHeaderValue"></a>
+
+### 
+ int|string|null **getRetryAfterHeaderValue**()in [../../LaravelFCM/Response/BaseResponse.md#method_getRetryAfterHeaderValue](<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>)
+
+[at line 83](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/BaseResponse.php#L83)
+
+
+
+#### Return Value
+
+|   |   |
+|---|---|
+|int|string|null|
+
 <a name id="method_parseResponse"></a>
 
 ### 

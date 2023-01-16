@@ -340,6 +340,15 @@ you should test if it's necessary to resent it.)F<a name="letterF"></a>
 - [LaravelFCM/Request/Request.md#method_getData](<abbr title="LaravelFCM\Request\Request">Request</abbr>::getData)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Request\Request">Request</abbr>](LaravelFCM/Request/Request.md)
 (get data transformed.)
 
+- [LaravelFCM/Response/BaseResponse.md#method_getRetryAfterHeaderValue](<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>::getRetryAfterHeaderValue)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>](LaravelFCM/Response/BaseResponse.md)
+()
+
+- [LaravelFCM/Response/DownstreamResponse.md#method_getRetryAfterHeader](<abbr title="LaravelFCM\Response\DownstreamResponse">DownstreamResponse</abbr>::getRetryAfterHeader)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Response\DownstreamResponse">DownstreamResponse</abbr>](LaravelFCM/Response/DownstreamResponse.md)
+()
+
+- [LaravelFCM/Response/Exceptions/ServerResponseException.md#method_getRetryAfterHeaderValue](<abbr title="LaravelFCM\Response\Exceptions\ServerResponseException">ServerResponseException</abbr>::getRetryAfterHeaderValue)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Response\Exceptions\ServerResponseException">ServerResponseException</abbr>](LaravelFCM/Response/Exceptions/ServerResponseException.md)
+()
+
 - [<abbr title="LaravelFCM\Response\GroupResponse">GroupResponse</abbr>](LaravelFCM/Response/GroupResponse.md) &mdash; <em>Class in namespace [LaravelFCM\Response](LaravelFCM/Response.md)()
 
 - [<abbr title="LaravelFCM\Response\GroupResponseContract">GroupResponseContract</abbr>](LaravelFCM/Response/GroupResponseContract.md) &mdash; <em>Class in namespace [LaravelFCM\Response](LaravelFCM/Response.md)(Interface GroupResponseContract.)H<a name="letterH"></a>
@@ -590,6 +599,9 @@ If true, remove all the empty token in your database.)
 
 - $[LaravelFCM/Request/TopicRequest.md#property_recipients_tokens](<abbr title="LaravelFCM\Request\TopicRequest">TopicRequest</abbr>#recipients_tokens) &mdash; <em>Property in class [<abbr title="LaravelFCM\Request\TopicRequest">TopicRequest</abbr>](LaravelFCM/Request/TopicRequest.md)
 ()
+
+- $[LaravelFCM/Response/BaseResponse.md#property_retryAfter](<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>#retryAfter) &mdash; <em>Property in class [<abbr title="LaravelFCM\Response\BaseResponse">BaseResponse</abbr>](LaravelFCM/Response/BaseResponse.md)
+(The value of the first Retry-After header in the response.)
 
 - $[LaravelFCM/Response/Exceptions/ServerResponseException.md#property_retryAfter](<abbr title="LaravelFCM\Response\Exceptions\ServerResponseException">ServerResponseException</abbr>#retryAfter) &mdash; <em>Property in class [<abbr title="LaravelFCM\Response\Exceptions\ServerResponseException">ServerResponseException</abbr>](LaravelFCM/Response/Exceptions/ServerResponseException.md)
 (The value of the first Retry-After header in the response.)

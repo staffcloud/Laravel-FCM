@@ -36,11 +36,13 @@ abstract class **BaseResponse** [View source](https://github.com/code-lts/Larave
 |---|---|---|---|
 |<a name="property_logEnabled"></a>protected bool|$logEnabled|||
 |<a name="property_logger"></a>protected <abbr title="Monolog\Logger">Logger</abbr>|$logger|The logger.||
+|<a name="property_retryAfter"></a> int|string|null|$retryAfter|The value of the first Retry-After header in the response.||
 ### Methods
 
 |   |   |   |   |
 |---|---|---|---|
 ||<a name="#method___construct"></a>__construct(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response, <abbr title="Monolog\Logger">Logger</abbr> $logger)|BaseResponse constructor.||
+|int|string|null|<a name="#method_getRetryAfterHeaderValue"></a>getRetryAfterHeaderValue()|No description||
 |void|<a name="#method_parseResponse"></a>parseResponse(array $responseInJson)|parse the response.||
 |void|<a name="#method_logResponse"></a>logResponse()|Log the response.||
 
@@ -51,7 +53,7 @@ abstract class **BaseResponse** [View source](https://github.com/code-lts/Larave
 ### 
   **__construct**(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response, <abbr title="Monolog\Logger">Logger</abbr> $logger)
 
-[at line 35](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/BaseResponse.php#L35)
+[at line 43](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/BaseResponse.php#L43)
 
 BaseResponse constructor.        
 
@@ -60,12 +62,27 @@ BaseResponse constructor.
 |   |   |   |
 |---|---|---|
 |<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr>|$response||<abbr title="Monolog\Logger">Logger</abbr>|$logger|
+<a name id="method_getRetryAfterHeaderValue"></a>
+
+### 
+ int|string|null **getRetryAfterHeaderValue**()
+
+[at line 83](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/BaseResponse.php#L83)
+
+
+
+#### Return Value
+
+|   |   |
+|---|---|
+|int|string|null|
+
 <a name id="method_parseResponse"></a>
 
 ### 
 abstractprotected void **parseResponse**(array $responseInJson)
 
-[at line 77](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/BaseResponse.php#L77)
+[at line 94](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/BaseResponse.php#L94)
 
 parse the response.        
 
@@ -86,7 +103,7 @@ parse the response.
 ### 
 abstractprotected void **logResponse**()
 
-[at line 84](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/BaseResponse.php#L84)
+[at line 101](https://github.com/code-lts/Laravel-FCM/blob/main/src/Response/BaseResponse.php#L101)
 
 Log the response.        
 
