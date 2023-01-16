@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [v1.x.x] - YYYY-MM-DD
 
+## [v1.8.0] - 2023-01-16
+
+- Support Laravel `^10`
+- Allow `monolog/monolog` `^3.2`
+- Composer archive exclude `/tests` and `/phpunit.xml`
+- Enable multiple FCM account support by adding new optional parameters "$serverKey, $senderId" to some top functions
+- Implement `retryAfter` protected property on `BaseResponse` class and add `getRetryAfterHeaderValue` function
+- Improve the `ServerResponseException` class
+
 ## [v1.7.1] - 2022-05-04
 
 - Fix detection of `Retry-After` header in ServerResponseException class and phpdoc
