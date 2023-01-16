@@ -19,21 +19,21 @@ class Request extends BaseRequest
     /**
      * @internal
      *
-     * @var Options
+     * @var Options|null
      */
     protected $options;
 
     /**
      * @internal
      *
-     * @var PayloadNotification
+     * @var PayloadNotification|null
      */
     protected $notification;
 
     /**
      * @internal
      *
-     * @var PayloadData
+     * @var PayloadData|null
      */
     protected $data;
 
@@ -47,13 +47,13 @@ class Request extends BaseRequest
     /**
      * Request constructor.
      *
-     * @param string|array        $to
-     * @param Options             $options
-     * @param PayloadNotification $notification
-     * @param PayloadData         $data
-     * @param Topics|null         $topic
-     * @param string|null         $serverKey (optional) The server key
-     * @param string|null         $senderId  (optional) The sender Id
+     * @param string|array             $to
+     * @param Options|null             $options
+     * @param PayloadNotification|null $notification
+     * @param PayloadData|null         $data
+     * @param Topics|null              $topic
+     * @param string|null              $serverKey (optional) The server key
+     * @param string|null              $senderId  (optional) The sender Id
      */
     public function __construct($to, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null, Topics $topic = null, string $serverKey = null, string $senderId = null)
     {

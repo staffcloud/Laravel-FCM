@@ -56,26 +56,6 @@ parameters:
 			path: src/Request/BaseRequest.php
 
 		-
-			message: "#^Property LaravelFCM\\\\Request\\\\Request\\:\\:\\$data \\(LaravelFCM\\\\Message\\\\PayloadData\\) does not accept LaravelFCM\\\\Message\\\\PayloadData\\|null\\.$#"
-			count: 1
-			path: src/Request/Request.php
-
-		-
-			message: "#^Property LaravelFCM\\\\Request\\\\Request\\:\\:\\$notification \\(LaravelFCM\\\\Message\\\\PayloadNotification\\) does not accept LaravelFCM\\\\Message\\\\PayloadNotification\\|null\\.$#"
-			count: 1
-			path: src/Request/Request.php
-
-		-
-			message: "#^Property LaravelFCM\\\\Request\\\\Request\\:\\:\\$options \\(LaravelFCM\\\\Message\\\\Options\\) does not accept LaravelFCM\\\\Message\\\\Options\\|null\\.$#"
-			count: 1
-			path: src/Request/Request.php
-
-		-
-			message: "#^Ternary operator condition is always true\\.$#"
-			count: 3
-			path: src/Request/Request.php
-
-		-
 			message: "#^Cannot call method get\\(\\) on mixed\\.$#"
 			count: 1
 			path: src/Response/BaseResponse.php
