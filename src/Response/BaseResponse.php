@@ -33,7 +33,7 @@ abstract class BaseResponse
      * @see https://httpwg.org/specs/rfc7231.html#header.retry-after
      * @var int|string|null
      */
-    public $retryAfter;
+    protected $retryAfter;
 
     /**
      * BaseResponse constructor.

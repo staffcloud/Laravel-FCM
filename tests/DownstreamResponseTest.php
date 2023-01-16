@@ -587,9 +587,10 @@ class DownstreamResponseTest extends FCMTestCase
             $this->assertFalse(true, 'The exception should have been fired !');
         } catch (ServerResponseException $e) {
             $this->assertSame(1500, $e->getRetryAfterHeaderValue());
+            $this->assertSame(1500, $e->retryAfter);
         }
     }
-    
+
     public function test422ResponseWithRetryAfterHeader(): void
     {
         $tokens = [
