@@ -43,7 +43,12 @@ class GroupRequest extends BaseRequest
      * @param string|null $senderId  (optional) The sender Id
      */
     public function __construct(
-        $operation, $notificationKeyName, $notificationKey, $registrationIds, string $serverKey = null, string $senderId = null
+        $operation,
+        $notificationKeyName,
+        $notificationKey,
+        $registrationIds,
+        string $serverKey = null,
+        string $senderId = null
     ) {
         parent::__construct($serverKey, $senderId);
 
