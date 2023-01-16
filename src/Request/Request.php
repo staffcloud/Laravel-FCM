@@ -52,10 +52,12 @@ class Request extends BaseRequest
      * @param PayloadNotification $notification
      * @param PayloadData         $data
      * @param Topics|null         $topic
+     * @param string|null         $serverKey (optional) The server key
+     * @param string|null         $senderId  (optional) The sender Id
      */
-    public function __construct($to, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null, Topics $topic = null)
+    public function __construct($to, Options $options = null, PayloadNotification $notification = null, PayloadData $data = null, Topics $topic = null, string $serverKey = null, string $senderId = null)
     {
-        parent::__construct();
+        parent::__construct($serverKey, $senderId);
 
         $this->to = $to;
         $this->options = $options;

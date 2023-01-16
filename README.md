@@ -1,4 +1,4 @@
-# Laravel-FCM (maintained version of the abandonned "official" repository)
+# Laravel-FCM (maintained and enhanced version of the abandonned "official" repository)
 
 ![Run tests](https://github.com/code-lts/Laravel-FCM/workflows/Run%20tests/badge.svg?branch=main)
 [![Coverage Status](https://codecov.io/gh/code-lts/laravel-fcm/branch/main/graph/badge.svg)](https://codecov.io/gh/code-lts/laravel-fcm)
@@ -105,7 +105,7 @@ Copy the config file ```fcm.php``` manually from the directory ```/vendor/code-l
 
 In your `.env` file, add the server key and the secret key for the Firebase Cloud Messaging:
 
-```php
+```env
 FCM_SERVER_KEY=my_secret_server_key
 FCM_SENDER_ID=my_secret_sender_id
 ```
@@ -275,7 +275,7 @@ $topicResponse = FCM::sendToTopic($topic, null, $notification, null);
 
 $topicResponse->isSuccess();
 $topicResponse->shouldRetry();
-$topicResponse->error());
+$topicResponse->error();
 
 ```
 
@@ -310,8 +310,6 @@ $key = FCMTopic::unsubscribeTopic($topic_id, $recipients_tokens);
 #### Sending a Notification to a Group
 
 ```php
-
-
 $notificationBuilder = new PayloadNotificationBuilder('my title');
 $notificationBuilder->setBody('Hello world')
 						->setSound('default');
