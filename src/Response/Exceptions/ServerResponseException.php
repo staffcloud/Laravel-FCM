@@ -4,6 +4,7 @@ namespace LaravelFCM\Response\Exceptions;
 
 use Exception;
 use Psr\Http\Message\ResponseInterface;
+use LaravelFCM\Response\DownstreamResponse;
 
 class ServerResponseException extends Exception
 {
@@ -11,7 +12,7 @@ class ServerResponseException extends Exception
      * The value of the first Retry-After header in the response.
      *
      * @see https://httpwg.org/specs/rfc7231.html#header.retry-after
-     * @var int|string
+     * @var int|string|null
      */
     public $retryAfter;
 
@@ -23,14 +24,16 @@ class ServerResponseException extends Exception
     public function __construct(ResponseInterface $response)
     {
         $code = $response->getStatusCode();
-        $responseHeader = $response->getHeaders();
         $responseBody = $response->getBody()->getContents();
-
-        if (array_key_exists('Retry-After', $responseHeader)) {
-            $retryAfterValue = $responseHeader['Retry-After'][0];
-            $this->retryAfter = is_numeric($retryAfterValue) ? (int) $retryAfterValue : $retryAfterValue;
-        }
-
+        $this->retryAfter = DownstreamResponse::getRetryAfterHeader($response);
         parent::__construct($responseBody, $code);
+    }
+
+    /**
+     * @return int|string|null
+     */
+    public function getRetryAfterHeaderValue()
+    {
+        return $this->retryAfter;
     }
 }

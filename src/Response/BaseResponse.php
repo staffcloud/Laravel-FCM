@@ -28,6 +28,14 @@ abstract class BaseResponse
     protected $logger;
 
     /**
+     * The value of the first Retry-After header in the response.
+     *
+     * @see https://httpwg.org/specs/rfc7231.html#header.retry-after
+     * @var int|string|null
+     */
+    public $retryAfter;
+
+    /**
      * BaseResponse constructor.
      *
      * @param \Psr\Http\Message\ResponseInterface $response
@@ -37,6 +45,7 @@ abstract class BaseResponse
         $this->logger = $logger;
         $this->checkIsJsonResponse($response);
         $this->logEnabled = app('config')->get('fcm.log_enabled', false);
+        $this->retryAfter = DownstreamResponse::getRetryAfterHeader($response);
         $responseInJson = json_decode($response->getBody(), true);
         $this->parseResponse($responseInJson);
     }
@@ -66,6 +75,14 @@ abstract class BaseResponse
         }
 
         throw new ServerResponseException($response);
+    }
+
+    /**
+     * @return int|string|null
+     */
+    public function getRetryAfterHeaderValue()
+    {
+        return $this->retryAfter;
     }
 
     /**

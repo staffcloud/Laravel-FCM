@@ -122,6 +122,19 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     }
 
     /**
+     * @return int|string|null
+     */
+    public static function getRetryAfterHeader(ResponseInterface $response)
+    {
+        $responseHeader = $response->getHeaders();
+        if (array_key_exists('Retry-After', $responseHeader)) {
+            $retryAfterValue = $responseHeader['Retry-After'][0];
+            return is_numeric($retryAfterValue) ? (int) $retryAfterValue : $retryAfterValue;
+        }
+        return null;
+    }
+
+    /**
      * @internal
      *
      * @param array $responseInJson
