@@ -4,6 +4,7 @@ namespace LaravelFCM\Tests;
 
 use GuzzleHttp\Psr7\Response;
 use LaravelFCM\Response\DownstreamResponse;
+use LaravelFCM\Response\Exceptions\ServerResponseException;
 
 class DownstreamResponseTest extends FCMTestCase
 {
@@ -506,5 +507,109 @@ class DownstreamResponseTest extends FCMTestCase
 
         $this->assertEquals('MessageTooBig', $downstreamResponse->tokensWithError()[$tokens[6]]);
         $this->assertEquals('MessageTooBig', $downstreamResponse->tokensWithError()[$tokens1[6]]);
+    }
+
+    public function testResponseWithRetryAfterHeader(): void
+    {
+        $tokens = [
+            'first_token',
+        ];
+
+        $response = new Response(
+            200,
+            ['Retry-After' => '1500'],
+            json_encode(
+                [
+                'multicast_id' => 216,
+                'success' => 0,
+                'failure' => 1,
+                'canonical_ids' => 0,
+                'results' => [
+                    ['error' => 'DeviceMessageRateExceeded'],
+                ],
+                ]
+            )
+        );
+
+        $logger = new \Monolog\Logger('test');
+        $logger->pushHandler(new \Monolog\Handler\NullHandler());
+
+        $downstreamResponse = new DownstreamResponse($response, $tokens, $logger);
+        $this->assertSame(1500, $downstreamResponse->getRetryAfterHeaderValue());
+    }
+
+    public function testCorruptResponseWithRetryAfterHeader(): void
+    {
+        $tokens = [
+            'first_token',
+        ];
+
+        $response = new Response(
+            200,
+            ['Retry-After' => '1500'],
+            json_encode(
+                [
+                'multicast_id' => 216,
+                'success' => 0,
+                'failure' => 1,
+                'canonical_ids' => 0,
+                    'results' => [
+                        ['error' => 'DeviceMessageRateExceeded'],
+                    ],
+                ]
+            ) . 'trailingdata'
+        );
+
+        $logger = new \Monolog\Logger('test');
+        $logger->pushHandler(new \Monolog\Handler\NullHandler());
+
+        $downstreamResponse = new DownstreamResponse($response, $tokens, $logger);
+        $this->assertSame(1500, $downstreamResponse->getRetryAfterHeaderValue());
+    }
+
+    public function test404ResponseWithRetryAfterHeader(): void
+    {
+        $tokens = [
+            'first_token',
+        ];
+
+        $response = new Response(
+            404,
+            ['Retry-After' => '1500'],
+            '404 not found'
+        );
+
+        $logger = new \Monolog\Logger('test');
+        $logger->pushHandler(new \Monolog\Handler\NullHandler());
+
+        try {
+            $downstreamResponse = new DownstreamResponse($response, $tokens, $logger);
+            $this->assertFalse(true, 'The exception should have been fired !');
+        } catch (ServerResponseException $e) {
+            $this->assertSame(1500, $e->getRetryAfterHeaderValue());
+        }
+    }
+    
+    public function test422ResponseWithRetryAfterHeader(): void
+    {
+        $tokens = [
+            'first_token',
+        ];
+
+        $response = new Response(
+            422,
+            ['Retry-After' => '1500'],
+            'Error 422'
+        );
+
+        $logger = new \Monolog\Logger('test');
+        $logger->pushHandler(new \Monolog\Handler\NullHandler());
+
+        try {
+            $downstreamResponse = new DownstreamResponse($response, $tokens, $logger);
+            $this->assertFalse(true, 'The exception should have been fired !');
+        } catch (ServerResponseException $e) {
+            $this->assertSame(1500, $e->getRetryAfterHeaderValue());
+        }
     }
 }

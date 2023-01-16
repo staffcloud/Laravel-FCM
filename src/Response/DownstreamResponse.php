@@ -105,15 +105,17 @@ class DownstreamResponse extends BaseResponse implements DownstreamResponseContr
     /**
      * Parse the response.
      *
-     * @param array $responseInJson
+     * @param array|bool $responseInJson
      * @return void
      */
     protected function parseResponse($responseInJson)
     {
-        $this->parse($responseInJson);
+        if (is_array($responseInJson)) {
+            $this->parse($responseInJson);
 
-        if ($this->needResultParsing($responseInJson)) {
-            $this->parseResult($responseInJson);
+            if ($this->needResultParsing($responseInJson)) {
+                $this->parseResult($responseInJson);
+            }
         }
 
         if ($this->logEnabled) {
