@@ -41,6 +41,7 @@
         "phpunit": "@php phpunit",
         "phpstan": "@php phpstan",
         "phpcs": "@php phpcs",
+        "phpcbf": "@php phpcbf",
         "test": [
             "@phpunit"
         ]
