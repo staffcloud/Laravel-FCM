@@ -41,11 +41,11 @@ Builder for creation of options used by FCM.
 |---|---|---|---|
 |[<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md)|<a name="#method_setCollapseKey"></a>setCollapseKey(string $collapseKey)|This parameter identifies a group of messages. A maximum of 4 different collapse keys is allowed at any given time.||
 |[<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md)|<a name="#method_setDirectBootOk"></a>setDirectBootOk(true $directBootOk)|If set to true, messages will be allowed to be delivered to the app while the device is in direct boot mode.||
-|[<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md)|<a name="#method_setPriority"></a>setPriority(string $priority)|Sets the priority of the message. Valid values are &quot;normal&quot; and &quot;high.&quot;. By default, messages are sent with normal priority.||
+||<a name="#method_setPriority"></a>setPriority($priority)|No description||
 |[<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md)|<a name="#method_setContentAvailable"></a>setContentAvailable(bool $contentAvailable)|support only Android and Ios.||
 |[<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md)|<a name="#method_setMutableContent"></a>setMutableContent(bool $isMutableContent)|support iOS 10+||
 |[<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md)|<a name="#method_setDelayWhileIdle"></a>setDelayWhileIdle(bool $delayWhileIdle)|When this parameter is set to true, it indicates that the message should not be sent until the device becomes active.||
-|[<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md)|<a name="#method_setTimeToLive"></a>setTimeToLive(int $timeToLive)|This parameter specifies how long the message should be kept in FCM storage if the device is offline.||
+||<a name="#method_setTimeToLive"></a>setTimeToLive($timeToLive)|No description||
 |[<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md)|<a name="#method_setRestrictedPackageName"></a>setRestrictedPackageName(string $restrictedPackageName)|This parameter specifies the package name of the application where the registration tokens must match in order to receive the message.||
 |[<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md)|<a name="#method_setDryRun"></a>setDryRun(bool $isDryRun)**deprecated**|This parameter, when set to true, allows developers to test a request without actually sending a message.||
 |[<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md)|<a name="#method_setFcmOptionsAnalyticsLabel"></a>setFcmOptionsAnalyticsLabel(string $analyticsLabel)|This parameter sets the Analytics label||
@@ -115,33 +115,17 @@ If set to true, messages will be allowed to be delivered to the app while the de
 <a name id="method_setPriority"></a>
 
 ### 
- [<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md) **setPriority**(string $priority)
+  **setPriority**($priority)
 
 [at line 127](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/OptionsBuilder.php#L127)
 
-Sets the priority of the message. Valid values are "normal" and "high."
-By default, messages are sent with normal priority.        
+
 
 #### Parameters
 
 |   |   |   |
 |---|---|---|
-|string|$priority|
-
-#### Return Value
-
-|   |   |
-|---|---|
-|[<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md)|
-
-
-#### Exceptions
-
-|   |   |
-|---|---|
-|[<abbr title="LaravelFCM\Message\Exceptions\InvalidOptionsException">InvalidOptionsException</abbr>](../../LaravelFCM/Message/Exceptions/InvalidOptionsException.html)||
-|[ReflectionException](https://www.php.net/ReflectionException)||
-
+||$priority|
 <a name id="method_setContentAvailable"></a>
 
 ### 
@@ -212,31 +196,17 @@ When this parameter is set to true, it indicates that the message should not be 
 <a name id="method_setTimeToLive"></a>
 
 ### 
- [<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md) **setTimeToLive**(int $timeToLive)
+  **setTimeToLive**($timeToLive)
 
 [at line 195](https://github.com/code-lts/Laravel-FCM/blob/main/src/Message/OptionsBuilder.php#L195)
 
-This parameter specifies how long the message should be kept in FCM storage if the device is offline.        
+
 
 #### Parameters
 
 |   |   |   |
 |---|---|---|
-|int|$timeToLive|(in second) min:0 max:2419200
-
-#### Return Value
-
-|   |   |
-|---|---|
-|[<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](../../LaravelFCM/Message/OptionsBuilder.md)|
-
-
-#### Exceptions
-
-|   |   |
-|---|---|
-|[<abbr title="LaravelFCM\Message\Exceptions\InvalidOptionsException">InvalidOptionsException</abbr>](../../LaravelFCM/Message/Exceptions/InvalidOptionsException.html)||
-
+||$timeToLive|
 <a name id="method_setRestrictedPackageName"></a>
 
 ### 

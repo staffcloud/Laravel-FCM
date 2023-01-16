@@ -26,7 +26,8 @@ class **TopicRequest**        extends [<abbr title="LaravelFCM\Request\BaseReque
 |   |   |   |   |
 |---|---|---|---|
 |<a name="property_client"></a>protected <abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr>|$client||<small>from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#property_client](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)</small>|
-|<a name="property_config"></a>protected array|$config||<small>from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#property_config](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)</small>|
+|<a name="property_serverKey"></a>protected string|$serverKey||<small>from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#property_serverKey](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)</small>|
+|<a name="property_senderId"></a>protected string|$senderId||<small>from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#property_senderId](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)</small>|
 |<a name="property_operation"></a>protected string|$operation|||
 |<a name="property_topic_id"></a>protected string|$topic_id|||
 |<a name="property_recipients_tokens"></a>protected array|$recipients_tokens|||
@@ -34,8 +35,8 @@ class **TopicRequest**        extends [<abbr title="LaravelFCM\Request\BaseReque
 
 |   |   |   |   |
 |---|---|---|---|
-||<a name="#method___construct"></a>__construct(string $operation, string $topic_id, array|string $recipients_tokens = [])|TopicRequest constructor.||
-|array|<a name="#method_buildRequestHeader"></a>buildRequestHeader()|Build the header for the request.|from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#method_buildRequestHeader](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)|
+||<a name="#method___construct"></a>__construct(string $operation, string $topic_id, array|string $recipients_tokens = [], string $serverKey = null, string $senderId = null)|TopicRequest constructor.||
+|<abbr title="LaravelFCM\Request\array&lt;string,string&gt;">array&lt;string,string&gt;</abbr>|<a name="#method_buildRequestHeader"></a>buildRequestHeader()|Build the header for the request.|from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#method_buildRequestHeader](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)|
 |mixed|<a name="#method_buildBody"></a>buildBody()|Build the header for the request.||
 |array|<a name="#method_build"></a>build()|Return the request in array form.|from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#method_build](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)|
 
@@ -44,9 +45,9 @@ class **TopicRequest**        extends [<abbr title="LaravelFCM\Request\BaseReque
 <a name id="method___construct"></a>
 
 ### 
-  **__construct**(string $operation, string $topic_id, array|string $recipients_tokens = [])
+  **__construct**(string $operation, string $topic_id, array|string $recipients_tokens = [], string $serverKey = null, string $senderId = null)
 
-[at line 35](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/TopicRequest.php#L35)
+[at line 37](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/TopicRequest.php#L37)
 
 TopicRequest constructor.        
 
@@ -54,13 +55,13 @@ TopicRequest constructor.
 
 |   |   |   |
 |---|---|---|
-|string|$operation|The operation name|string|$topic_id|The topic id|array|string|$recipients_tokens|The tokens or the token
+|string|$operation|The operation name|string|$topic_id|The topic id|array|string|$recipients_tokens|The tokens or the token|string|$serverKey|The server key|string|$senderId|The sender Id
 <a name id="method_buildRequestHeader"></a>
 
 ### 
-protected array **buildRequestHeader**()in [../../LaravelFCM/Request/BaseRequest.md#method_buildRequestHeader](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)
+protected <abbr title="LaravelFCM\Request\array&lt;string,string&gt;">array&lt;string,string&gt;</abbr> **buildRequestHeader**()in [../../LaravelFCM/Request/BaseRequest.md#method_buildRequestHeader](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)
 
-[at line 34](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L34)
+[at line 57](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L57)
 
 Build the header for the request.        
 
@@ -68,14 +69,14 @@ Build the header for the request.
 
 |   |   |
 |---|---|
-|array|
+|<abbr title="LaravelFCM\Request\array&lt;string,string&gt;">array&lt;string,string&gt;</abbr>|
 
 <a name id="method_buildBody"></a>
 
 ### 
 protected mixed **buildBody**()
 
-[at line 53](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/TopicRequest.php#L53)
+[at line 55](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/TopicRequest.php#L55)
 
 Build the header for the request.        
 
@@ -90,7 +91,7 @@ Build the header for the request.
 ### 
  array **build**()in [../../LaravelFCM/Request/BaseRequest.md#method_build](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)
 
-[at line 55](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L55)
+[at line 78](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L78)
 
 Return the request in array form.        
 

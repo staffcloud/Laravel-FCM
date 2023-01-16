@@ -26,18 +26,19 @@ class **Request**        extends [<abbr title="LaravelFCM\Request\BaseRequest">B
 |   |   |   |   |
 |---|---|---|---|
 |<a name="property_client"></a>protected <abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr>|$client||<small>from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#property_client](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)</small>|
-|<a name="property_config"></a>protected array|$config||<small>from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#property_config](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)</small>|
+|<a name="property_serverKey"></a>protected string|$serverKey||<small>from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#property_serverKey](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)</small>|
+|<a name="property_senderId"></a>protected string|$senderId||<small>from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#property_senderId](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)</small>|
 |<a name="property_to"></a>protected string|array|$to|||
-|<a name="property_options"></a>protected [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md)|$options|||
-|<a name="property_notification"></a>protected [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md)|$notification|||
-|<a name="property_data"></a>protected [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md)|$data|||
+|<a name="property_options"></a>protected [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md)|null|$options|||
+|<a name="property_notification"></a>protected [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md)|null|$notification|||
+|<a name="property_data"></a>protected [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md)|null|$data|||
 |<a name="property_topic"></a>protected [<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md)|null|$topic|||
 ### Methods
 
 |   |   |   |   |
 |---|---|---|---|
-||<a name="#method___construct"></a>__construct(string|array $to, [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md) $options = null, [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md) $notification = null, [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md) $data = null, [<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md) $topic = null)|Request constructor.||
-|array|<a name="#method_buildRequestHeader"></a>buildRequestHeader()|Build the header for the request.|from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#method_buildRequestHeader](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)|
+||<a name="#method___construct"></a>__construct(string|array $to, [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md) $options = null, [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md) $notification = null, [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md) $data = null, [<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md) $topic = null, string $serverKey = null, string $senderId = null)|Request constructor.||
+|<abbr title="LaravelFCM\Request\array&lt;string,string&gt;">array&lt;string,string&gt;</abbr>|<a name="#method_buildRequestHeader"></a>buildRequestHeader()|Build the header for the request.|from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#method_buildRequestHeader](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)|
 |mixed|<a name="#method_buildBody"></a>buildBody()|Build the body for the request.||
 |array|<a name="#method_build"></a>build()|Return the request in array form.|from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#method_build](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)|
 |array|null|string|<a name="#method_getTo"></a>getTo()|get to key transformed.||
@@ -51,9 +52,9 @@ class **Request**        extends [<abbr title="LaravelFCM\Request\BaseRequest">B
 <a name id="method___construct"></a>
 
 ### 
-  **__construct**(string|array $to, [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md) $options = null, [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md) $notification = null, [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md) $data = null, [<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md) $topic = null)
+  **__construct**(string|array $to, [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md) $options = null, [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md) $notification = null, [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md) $data = null, [<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md) $topic = null, string $serverKey = null, string $senderId = null)
 
-[at line 56](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/Request.php#L56)
+[at line 58](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/Request.php#L58)
 
 Request constructor.        
 
@@ -61,13 +62,13 @@ Request constructor.
 
 |   |   |   |
 |---|---|---|
-|string|array|$to||[<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md)|$options||[<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md)|$notification||[<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md)|$data||[<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md)|$topic|
+|string|array|$to||[<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md)|$options||[<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md)|$notification||[<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md)|$data||[<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md)|$topic||string|$serverKey|The server key|string|$senderId|The sender Id
 <a name id="method_buildRequestHeader"></a>
 
 ### 
-protected array **buildRequestHeader**()in [../../LaravelFCM/Request/BaseRequest.md#method_buildRequestHeader](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)
+protected <abbr title="LaravelFCM\Request\array&lt;string,string&gt;">array&lt;string,string&gt;</abbr> **buildRequestHeader**()in [../../LaravelFCM/Request/BaseRequest.md#method_buildRequestHeader](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)
 
-[at line 34](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L34)
+[at line 57](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L57)
 
 Build the header for the request.        
 
@@ -75,14 +76,14 @@ Build the header for the request.
 
 |   |   |
 |---|---|
-|array|
+|<abbr title="LaravelFCM\Request\array&lt;string,string&gt;">array&lt;string,string&gt;</abbr>|
 
 <a name id="method_buildBody"></a>
 
 ### 
 protected mixed **buildBody**()
 
-[at line 72](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/Request.php#L72)
+[at line 74](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/Request.php#L74)
 
 Build the body for the request.        
 
@@ -97,7 +98,7 @@ Build the body for the request.
 ### 
  array **build**()in [../../LaravelFCM/Request/BaseRequest.md#method_build](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)
 
-[at line 55](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L55)
+[at line 78](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L78)
 
 Return the request in array form.        
 
@@ -112,7 +113,7 @@ Return the request in array form.
 ### 
 protected array|null|string **getTo**()
 
-[at line 92](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/Request.php#L92)
+[at line 94](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/Request.php#L94)
 
 get to key transformed.        
 
@@ -127,7 +128,7 @@ get to key transformed.
 ### 
 protected array|null **getRegistrationIds**()
 
-[at line 108](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/Request.php#L108)
+[at line 110](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/Request.php#L110)
 
 get registrationIds transformed.        
 
@@ -142,7 +143,7 @@ get registrationIds transformed.
 ### 
 protected array **getOptions**()
 
-[at line 118](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/Request.php#L118)
+[at line 120](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/Request.php#L120)
 
 get Options transformed.        
 
@@ -157,7 +158,7 @@ get Options transformed.
 ### 
 protected array|null **getNotification**()
 
-[at line 135](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/Request.php#L135)
+[at line 137](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/Request.php#L137)
 
 get notification transformed.        
 
@@ -172,7 +173,7 @@ get notification transformed.
 ### 
 protected array|null **getData**()
 
-[at line 145](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/Request.php#L145)
+[at line 147](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/Request.php#L147)
 
 get data transformed.        
 

@@ -26,13 +26,14 @@ abstract class **BaseRequest** [View source](https://github.com/code-lts/Laravel
 |   |   |   |   |
 |---|---|---|---|
 |<a name="property_client"></a>protected <abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr>|$client|||
-|<a name="property_config"></a>protected array|$config|||
+|<a name="property_serverKey"></a>protected string|$serverKey|||
+|<a name="property_senderId"></a>protected string|$senderId|||
 ### Methods
 
 |   |   |   |   |
 |---|---|---|---|
-||<a name="#method___construct"></a>__construct()|BaseRequest constructor.||
-|array|<a name="#method_buildRequestHeader"></a>buildRequestHeader()|Build the header for the request.||
+||<a name="#method___construct"></a>__construct(string $serverKey = null, string $senderId = null)|Build a new BaseRequest||
+|<abbr title="LaravelFCM\Request\array&lt;string,string&gt;">array&lt;string,string&gt;</abbr>|<a name="#method_buildRequestHeader"></a>buildRequestHeader()|Build the header for the request.||
 |mixed|<a name="#method_buildBody"></a>buildBody()|Build the body of the request.||
 |array|<a name="#method_build"></a>build()|Return the request in array form.||
 
@@ -41,17 +42,23 @@ abstract class **BaseRequest** [View source](https://github.com/code-lts/Laravel
 <a name id="method___construct"></a>
 
 ### 
-  **__construct**()
+  **__construct**(string $serverKey = null, string $senderId = null)
 
-[at line 24](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L24)
+[at line 34](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L34)
 
-BaseRequest constructor.        
+Build a new BaseRequest        
+
+#### Parameters
+
+|   |   |   |
+|---|---|---|
+|string|$serverKey|The server key|string|$senderId|The sender Id
 <a name id="method_buildRequestHeader"></a>
 
 ### 
-protected array **buildRequestHeader**()
+protected <abbr title="LaravelFCM\Request\array&lt;string,string&gt;">array&lt;string,string&gt;</abbr> **buildRequestHeader**()
 
-[at line 34](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L34)
+[at line 57](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L57)
 
 Build the header for the request.        
 
@@ -59,14 +66,14 @@ Build the header for the request.
 
 |   |   |
 |---|---|
-|array|
+|<abbr title="LaravelFCM\Request\array&lt;string,string&gt;">array&lt;string,string&gt;</abbr>|
 
 <a name id="method_buildBody"></a>
 
 ### 
 abstractprotected mixed **buildBody**()
 
-[at line 48](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L48)
+[at line 71](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L71)
 
 Build the body of the request.        
 
@@ -81,7 +88,7 @@ Build the body of the request.
 ### 
  array **build**()
 
-[at line 55](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L55)
+[at line 78](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L78)
 
 Return the request in array form.        
 

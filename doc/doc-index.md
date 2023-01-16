@@ -94,7 +94,7 @@
 (Build an PayloadNotification.)
 
 - [LaravelFCM/Message/Topics.md#method_build](<abbr title="LaravelFCM\Message\Topics">Topics</abbr>::build)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](LaravelFCM/Message/Topics.md)
-(Transform to array.)
+()
 
 - [<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>](LaravelFCM/Request/BaseRequest.md) &mdash; <em>Class in namespace [LaravelFCM\Request](LaravelFCM/Request.md)()
 
@@ -165,9 +165,6 @@
 ()
 
 - $[LaravelFCM/Request/BaseRequest.md#property_client](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>#client) &mdash; <em>Property in class [<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>](LaravelFCM/Request/BaseRequest.md)
-()
-
-- $[LaravelFCM/Request/BaseRequest.md#property_config](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>#config) &mdash; <em>Property in class [<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>](LaravelFCM/Request/BaseRequest.md)
 ()
 
 - [LaravelFCM/Sender/FCMGroup.md#method_createGroup](<abbr title="LaravelFCM\Sender\FCMGroup">FCMGroup</abbr>::createGroup)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Sender\FCMGroup">FCMGroup</abbr>](LaravelFCM/Sender/FCMGroup.md)
@@ -389,7 +386,7 @@ If true, remove all the empty token in your database.)
 (is direct boot ok)
 
 - [LaravelFCM/Message/OptionsPriorities.md#method_isValid](<abbr title="LaravelFCM\Message\OptionsPriorities">OptionsPriorities</abbr>::isValid)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Message\OptionsPriorities">OptionsPriorities</abbr>](LaravelFCM/Message/OptionsPriorities.md)
-(check if this priority is supported by fcm.)
+()
 
 - $[LaravelFCM/Message/PayloadNotification.md#property_icon](<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>#icon) &mdash; <em>Property in class [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](LaravelFCM/Message/PayloadNotification.md)
 ()
@@ -615,8 +612,7 @@ A maximum of 4 different collapse keys is allowed at any given time.)
 (If set to true, messages will be allowed to be delivered to the app while the device is in direct boot mode.)
 
 - [LaravelFCM/Message/OptionsBuilder.md#method_setPriority](<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>::setPriority)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](LaravelFCM/Message/OptionsBuilder.md)
-(Sets the priority of the message. Valid values are "normal" and "high."
-By default, messages are sent with normal priority.)
+()
 
 - [LaravelFCM/Message/OptionsBuilder.md#method_setContentAvailable](<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>::setContentAvailable)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](LaravelFCM/Message/OptionsBuilder.md)
 (support only Android and Ios.)
@@ -628,7 +624,7 @@ By default, messages are sent with normal priority.)
 (When this parameter is set to true, it indicates that the message should not be sent until the device becomes active.)
 
 - [LaravelFCM/Message/OptionsBuilder.md#method_setTimeToLive](<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>::setTimeToLive)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](LaravelFCM/Message/OptionsBuilder.md)
-(This parameter specifies how long the message should be kept in FCM storage if the device is offline.)
+()
 
 - [LaravelFCM/Message/OptionsBuilder.md#method_setRestrictedPackageName](<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>::setRestrictedPackageName)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Message\OptionsBuilder">OptionsBuilder</abbr>](LaravelFCM/Message/OptionsBuilder.md)
 (This parameter specifies the package name of the application where the registration tokens must match in order to receive the message.)
@@ -692,6 +688,12 @@ Supports an url or internal image.)
 
 - [LaravelFCM/Message/PayloadNotificationBuilder.md#method_setBodyLocationArgs](<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>::setBodyLocationArgs)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Message\PayloadNotificationBuilder">PayloadNotificationBuilder</abbr>](LaravelFCM/Message/PayloadNotificationBuilder.md)
 (Indicates the string value to replace format specifiers in the body string for localization.)
+
+- $[LaravelFCM/Request/BaseRequest.md#property_serverKey](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>#serverKey) &mdash; <em>Property in class [<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>](LaravelFCM/Request/BaseRequest.md)
+()
+
+- $[LaravelFCM/Request/BaseRequest.md#property_senderId](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>#senderId) &mdash; <em>Property in class [<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>](LaravelFCM/Request/BaseRequest.md)
+()
 
 - [<abbr title="LaravelFCM\Response\Exceptions\ServerResponseException">ServerResponseException</abbr>](LaravelFCM/Response/Exceptions/ServerResponseException.md) &mdash; <em>Class in namespace [LaravelFCM\Response\Exceptions](LaravelFCM/Response/Exceptions.md)()
 
@@ -862,7 +864,7 @@ Supports an url or internal image.)
 (Title must be present on android notification and ios (watch) notification.)
 
 - [LaravelFCM/Request/BaseRequest.md#method___construct](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>::__construct)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>](LaravelFCM/Request/BaseRequest.md)
-(BaseRequest constructor.)
+(Build a new BaseRequest)
 
 - [LaravelFCM/Request/GroupRequest.md#method___construct](<abbr title="LaravelFCM\Request\GroupRequest">GroupRequest</abbr>::__construct)() &mdash; <em>Method in class [<abbr title="LaravelFCM\Request\GroupRequest">GroupRequest</abbr>](LaravelFCM/Request/GroupRequest.md)
 (GroupRequest constructor.)

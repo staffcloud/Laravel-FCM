@@ -41,9 +41,9 @@ class **FCMTopic**        extends [<abbr title="LaravelFCM\Sender\HTTPSender">HT
 |   |   |   |   |
 |---|---|---|---|
 ||<a name="#method___construct"></a>__construct(<abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr> $client, string $url, <abbr title="Monolog\Logger">Logger</abbr> $logger)|Initializes a new sender object.|from&nbsp;[../../LaravelFCM/Sender/HTTPSender.md#method___construct](<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>)|
-|bool|<a name="#method_createTopic"></a>createTopic(string $topicId, string $registrationId)|Create a topic.||
-|bool|<a name="#method_subscribeTopic"></a>subscribeTopic(string $topicId, array|string $recipientsTokens)|Add subscription to a topic.||
-|bool|<a name="#method_unsubscribeTopic"></a>unsubscribeTopic(string $topicId, array|string $recipientsTokens)|Remove subscription from a topic.||
+|bool|<a name="#method_createTopic"></a>createTopic(string $topicId, string $registrationId, string $serverKey = null, string $senderId = null)|Create a topic.||
+|bool|<a name="#method_subscribeTopic"></a>subscribeTopic(string $topicId, array|string $recipientsTokens, string $serverKey = null, string $senderId = null)|Add subscription to a topic.||
+|bool|<a name="#method_unsubscribeTopic"></a>unsubscribeTopic(string $topicId, array|string $recipientsTokens, string $serverKey = null, string $senderId = null)|Remove subscription from a topic.||
 |bool|<a name="#method_isValidResponse"></a>isValidResponse(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response)|No description||
 
 
@@ -65,9 +65,9 @@ Initializes a new sender object.
 <a name id="method_createTopic"></a>
 
 ### 
- bool **createTopic**(string $topicId, string $registrationId)
+ bool **createTopic**(string $topicId, string $registrationId, string $serverKey = null, string $senderId = null)
 
-[at line 28](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMTopic.php#L28)
+[at line 30](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMTopic.php#L30)
 
 Create a topic.        
 
@@ -75,7 +75,7 @@ Create a topic.
 
 |   |   |   |
 |---|---|---|
-|string|$topicId||string|$registrationId|
+|string|$topicId||string|$registrationId||string|$serverKey|(optional) The server key|string|$senderId|(optional) The sender Id
 
 #### Return Value
 
@@ -86,9 +86,9 @@ Create a topic.
 <a name id="method_subscribeTopic"></a>
 
 ### 
- bool **subscribeTopic**(string $topicId, array|string $recipientsTokens)
+ bool **subscribeTopic**(string $topicId, array|string $recipientsTokens, string $serverKey = null, string $senderId = null)
 
-[at line 50](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMTopic.php#L50)
+[at line 54](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMTopic.php#L54)
 
 Add subscription to a topic.        
 
@@ -96,7 +96,7 @@ Add subscription to a topic.
 
 |   |   |   |
 |---|---|---|
-|string|$topicId||array|string|$recipientsTokens|
+|string|$topicId||array|string|$recipientsTokens||string|$serverKey|(optional) The server key|string|$senderId|(optional) The sender Id
 
 #### Return Value
 
@@ -107,9 +107,9 @@ Add subscription to a topic.
 <a name id="method_unsubscribeTopic"></a>
 
 ### 
- bool **unsubscribeTopic**(string $topicId, array|string $recipientsTokens)
+ bool **unsubscribeTopic**(string $topicId, array|string $recipientsTokens, string $serverKey = null, string $senderId = null)
 
-[at line 69](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMTopic.php#L69)
+[at line 75](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMTopic.php#L75)
 
 Remove subscription from a topic.        
 
@@ -117,7 +117,7 @@ Remove subscription from a topic.
 
 |   |   |   |
 |---|---|---|
-|string|$topicId||array|string|$recipientsTokens|
+|string|$topicId||array|string|$recipientsTokens||string|$serverKey|(optional) The server key|string|$senderId|(optional) The sender Id
 
 #### Return Value
 
@@ -130,7 +130,7 @@ Remove subscription from a topic.
 ### 
  bool **isValidResponse**(<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> $response)
 
-[at line 85](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMTopic.php#L85)
+[at line 91](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMTopic.php#L91)
 
 
 

@@ -39,9 +39,9 @@ class **FCMSender**        extends [<abbr title="LaravelFCM\Sender\HTTPSender">H
 |   |   |   |   |
 |---|---|---|---|
 ||<a name="#method___construct"></a>__construct(<abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr> $client, string $url, <abbr title="Monolog\Logger">Logger</abbr> $logger)|Initializes a new sender object.|from&nbsp;[../../LaravelFCM/Sender/HTTPSender.md#method___construct](<abbr title="LaravelFCM\Sender\HTTPSender">HTTPSender</abbr>)|
-|[<abbr title="LaravelFCM\Response\DownstreamResponse">DownstreamResponse</abbr>](../../LaravelFCM/Response/DownstreamResponse.md)|null|<a name="#method_sendTo"></a>sendTo(string|array $to, [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md) $options = null, [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md) $notification = null, [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md) $data = null)|Send a downstream message to a unique device with is registration Token or to multiples devices with an array of registrationIds||
-|[<abbr title="LaravelFCM\Response\GroupResponse">GroupResponse</abbr>](../../LaravelFCM/Response/GroupResponse.md)|<a name="#method_sendToGroup"></a>sendToGroup(string|string[] $notificationKey, [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md) $options = null, [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md) $notification = null, [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md) $data = null)|Send a message to a group of devices identified with them notification key.||
-|[<abbr title="LaravelFCM\Response\TopicResponse">TopicResponse</abbr>](../../LaravelFCM/Response/TopicResponse.md)|<a name="#method_sendToTopic"></a>sendToTopic([<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md) $topics, [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md) $options = null, [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md) $notification = null, [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md) $data = null)|Send message devices registered at a or more topics.||
+|[<abbr title="LaravelFCM\Response\DownstreamResponse">DownstreamResponse</abbr>](../../LaravelFCM/Response/DownstreamResponse.md)|null|<a name="#method_sendTo"></a>sendTo(string|array $to, [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md) $options = null, [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md) $notification = null, [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md) $data = null, string $serverKey = null, string $senderId = null)|Send a downstream message to a unique device with is registration Token or to multiples devices with an array of registrationIds||
+|[<abbr title="LaravelFCM\Response\GroupResponse">GroupResponse</abbr>](../../LaravelFCM/Response/GroupResponse.md)|<a name="#method_sendToGroup"></a>sendToGroup(string|string[] $notificationKey, [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md) $options = null, [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md) $notification = null, [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md) $data = null, string $serverKey = null, string $senderId = null)|Send a message to a group of devices identified with them notification key.||
+|[<abbr title="LaravelFCM\Response\TopicResponse">TopicResponse</abbr>](../../LaravelFCM/Response/TopicResponse.md)|<a name="#method_sendToTopic"></a>sendToTopic([<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md) $topics, [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md) $options = null, [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md) $notification = null, [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md) $data = null, string $serverKey = null, string $senderId = null)|Send message devices registered at a or more topics.||
 |null|<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr>|<a name="#method_post"></a>post([<abbr title="LaravelFCM\Request\Request">Request</abbr>](../../LaravelFCM/Request/Request.md) $request)|No description||
 
 
@@ -63,9 +63,9 @@ Initializes a new sender object.
 <a name id="method_sendTo"></a>
 
 ### 
- [<abbr title="LaravelFCM\Response\DownstreamResponse">DownstreamResponse</abbr>](../../LaravelFCM/Response/DownstreamResponse.md)|null **sendTo**(string|array $to, [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md) $options = null, [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md) $notification = null, [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md) $data = null)
+ [<abbr title="LaravelFCM\Response\DownstreamResponse">DownstreamResponse</abbr>](../../LaravelFCM/Response/DownstreamResponse.md)|null **sendTo**(string|array $to, [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md) $options = null, [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md) $notification = null, [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md) $data = null, string $serverKey = null, string $senderId = null)
 
-[at line 29](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMSender.php#L29)
+[at line 31](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMSender.php#L31)
 
 Send a downstream message to a unique device with is registration Token or to multiples devices with an array of registrationIds        
 
@@ -73,7 +73,7 @@ Send a downstream message to a unique device with is registration Token or to mu
 
 |   |   |   |
 |---|---|---|
-|string|array|$to||[<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md)|$options||[<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md)|$notification||[<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md)|$data|
+|string|array|$to||[<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md)|$options||[<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md)|$notification||[<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md)|$data||string|$serverKey|(optional) The server key|string|$senderId|(optional) The sender Id
 
 #### Return Value
 
@@ -84,9 +84,9 @@ Send a downstream message to a unique device with is registration Token or to mu
 <a name id="method_sendToGroup"></a>
 
 ### 
- [<abbr title="LaravelFCM\Response\GroupResponse">GroupResponse</abbr>](../../LaravelFCM/Response/GroupResponse.md) **sendToGroup**(string|string[] $notificationKey, [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md) $options = null, [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md) $notification = null, [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md) $data = null)
+ [<abbr title="LaravelFCM\Response\GroupResponse">GroupResponse</abbr>](../../LaravelFCM/Response/GroupResponse.md) **sendToGroup**(string|string[] $notificationKey, [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md) $options = null, [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md) $notification = null, [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md) $data = null, string $serverKey = null, string $senderId = null)
 
-[at line 67](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMSender.php#L67)
+[at line 71](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMSender.php#L71)
 
 Send a message to a group of devices identified with them notification key.        
 
@@ -94,7 +94,7 @@ Send a message to a group of devices identified with them notification key.
 
 |   |   |   |
 |---|---|---|
-|string|string[]|$notificationKey||[<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md)|$options||[<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md)|$notification||[<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md)|$data|
+|string|string[]|$notificationKey||[<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md)|$options||[<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md)|$notification||[<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md)|$data||string|$serverKey|(optional) The server key|string|$senderId|(optional) The sender Id
 
 #### Return Value
 
@@ -105,9 +105,9 @@ Send a message to a group of devices identified with them notification key.
 <a name id="method_sendToTopic"></a>
 
 ### 
- [<abbr title="LaravelFCM\Response\TopicResponse">TopicResponse</abbr>](../../LaravelFCM/Response/TopicResponse.md) **sendToTopic**([<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md) $topics, [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md) $options = null, [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md) $notification = null, [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md) $data = null)
+ [<abbr title="LaravelFCM\Response\TopicResponse">TopicResponse</abbr>](../../LaravelFCM/Response/TopicResponse.md) **sendToTopic**([<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md) $topics, [<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md) $options = null, [<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md) $notification = null, [<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md) $data = null, string $serverKey = null, string $senderId = null)
 
-[at line 86](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMSender.php#L86)
+[at line 92](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMSender.php#L92)
 
 Send message devices registered at a or more topics.        
 
@@ -115,7 +115,7 @@ Send message devices registered at a or more topics.
 
 |   |   |   |
 |---|---|---|
-|[<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md)|$topics||[<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md)|$options||[<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md)|$notification||[<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md)|$data|
+|[<abbr title="LaravelFCM\Message\Topics">Topics</abbr>](../../LaravelFCM/Message/Topics.md)|$topics||[<abbr title="LaravelFCM\Message\Options">Options</abbr>](../../LaravelFCM/Message/Options.md)|$options||[<abbr title="LaravelFCM\Message\PayloadNotification">PayloadNotification</abbr>](../../LaravelFCM/Message/PayloadNotification.md)|$notification||[<abbr title="LaravelFCM\Message\PayloadData">PayloadData</abbr>](../../LaravelFCM/Message/PayloadData.md)|$data||string|$serverKey|(optional) The server key|string|$senderId|(optional) The sender Id
 
 #### Return Value
 
@@ -128,7 +128,7 @@ Send message devices registered at a or more topics.
 ### 
 protected null|<abbr title="Psr\Http\Message\ResponseInterface">ResponseInterface</abbr> **post**([<abbr title="LaravelFCM\Request\Request">Request</abbr>](../../LaravelFCM/Request/Request.md) $request)
 
-[at line 102](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMSender.php#L102)
+[at line 108](https://github.com/code-lts/Laravel-FCM/blob/main/src/Sender/FCMSender.php#L108)
 
 
 

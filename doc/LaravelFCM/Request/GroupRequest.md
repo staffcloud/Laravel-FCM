@@ -26,7 +26,8 @@ class **GroupRequest**        extends [<abbr title="LaravelFCM\Request\BaseReque
 |   |   |   |   |
 |---|---|---|---|
 |<a name="property_client"></a>protected <abbr title="GuzzleHttp\ClientInterface">ClientInterface</abbr>|$client||<small>from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#property_client](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)</small>|
-|<a name="property_config"></a>protected array|$config||<small>from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#property_config](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)</small>|
+|<a name="property_serverKey"></a>protected string|$serverKey||<small>from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#property_serverKey](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)</small>|
+|<a name="property_senderId"></a>protected string|$senderId||<small>from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#property_senderId](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)</small>|
 |<a name="property_operation"></a>protected string|$operation|||
 |<a name="property_notificationKeyName"></a>protected string|$notificationKeyName|||
 |<a name="property_notificationKey"></a>protected string|$notificationKey|||
@@ -35,8 +36,8 @@ class **GroupRequest**        extends [<abbr title="LaravelFCM\Request\BaseReque
 
 |   |   |   |   |
 |---|---|---|---|
-||<a name="#method___construct"></a>__construct(string $operation, string $notificationKeyName, string $notificationKey, array $registrationIds)|GroupRequest constructor.||
-|array|<a name="#method_buildRequestHeader"></a>buildRequestHeader()|Build the header for the request.|from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#method_buildRequestHeader](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)|
+||<a name="#method___construct"></a>__construct(string $operation, string $notificationKeyName, string $notificationKey, array $registrationIds, string $serverKey = null, string $senderId = null)|GroupRequest constructor.||
+|<abbr title="LaravelFCM\Request\array&lt;string,string&gt;">array&lt;string,string&gt;</abbr>|<a name="#method_buildRequestHeader"></a>buildRequestHeader()|Build the header for the request.|from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#method_buildRequestHeader](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)|
 |mixed|<a name="#method_buildBody"></a>buildBody()|Build the header for the request.||
 |array|<a name="#method_build"></a>build()|Return the request in array form.|from&nbsp;[../../LaravelFCM/Request/BaseRequest.md#method_build](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)|
 
@@ -45,9 +46,9 @@ class **GroupRequest**        extends [<abbr title="LaravelFCM\Request\BaseReque
 <a name id="method___construct"></a>
 
 ### 
-  **__construct**(string $operation, string $notificationKeyName, string $notificationKey, array $registrationIds)
+  **__construct**(string $operation, string $notificationKeyName, string $notificationKey, array $registrationIds, string $serverKey = null, string $senderId = null)
 
-[at line 43](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/GroupRequest.php#L43)
+[at line 45](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/GroupRequest.php#L45)
 
 GroupRequest constructor.        
 
@@ -55,13 +56,13 @@ GroupRequest constructor.
 
 |   |   |   |
 |---|---|---|
-|string|$operation||string|$notificationKeyName||string|$notificationKey||array|$registrationIds|
+|string|$operation||string|$notificationKeyName||string|$notificationKey||array|$registrationIds||string|$serverKey|The server key|string|$senderId|The sender Id
 <a name id="method_buildRequestHeader"></a>
 
 ### 
-protected array **buildRequestHeader**()in [../../LaravelFCM/Request/BaseRequest.md#method_buildRequestHeader](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)
+protected <abbr title="LaravelFCM\Request\array&lt;string,string&gt;">array&lt;string,string&gt;</abbr> **buildRequestHeader**()in [../../LaravelFCM/Request/BaseRequest.md#method_buildRequestHeader](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)
 
-[at line 34](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L34)
+[at line 57](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L57)
 
 Build the header for the request.        
 
@@ -69,14 +70,14 @@ Build the header for the request.
 
 |   |   |
 |---|---|
-|array|
+|<abbr title="LaravelFCM\Request\array&lt;string,string&gt;">array&lt;string,string&gt;</abbr>|
 
 <a name id="method_buildBody"></a>
 
 ### 
 protected mixed **buildBody**()
 
-[at line 58](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/GroupRequest.php#L58)
+[at line 66](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/GroupRequest.php#L66)
 
 Build the header for the request.        
 
@@ -91,7 +92,7 @@ Build the header for the request.
 ### 
  array **build**()in [../../LaravelFCM/Request/BaseRequest.md#method_build](<abbr title="LaravelFCM\Request\BaseRequest">BaseRequest</abbr>)
 
-[at line 55](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L55)
+[at line 78](https://github.com/code-lts/Laravel-FCM/blob/main/src/Request/BaseRequest.php#L78)
 
 Return the request in array form.        
 
