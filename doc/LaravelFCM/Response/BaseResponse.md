@@ -36,7 +36,7 @@ abstract class **BaseResponse** [View source](https://github.com/code-lts/Larave
 |---|---|---|---|
 |<a name="property_logEnabled"></a>protected bool|$logEnabled|||
 |<a name="property_logger"></a>protected <abbr title="Monolog\Logger">Logger</abbr>|$logger|The logger.||
-|<a name="property_retryAfter"></a> int|string|null|$retryAfter|The value of the first Retry-After header in the response.||
+|<a name="property_retryAfter"></a>protected int|string|null|$retryAfter|The value of the first Retry-After header in the response.||
 ### Methods
 
 |   |   |   |   |
