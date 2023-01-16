@@ -31,10 +31,12 @@ class TopicRequest extends BaseRequest
      * @param string $operation The operation name
      * @param string $topic_id The topic id
      * @param array|string $recipients_tokens The tokens or the token
+     * @param string|null $serverKey (optional) The server key
+     * @param string|null $senderId  (optional) The sender Id
      */
-    public function __construct($operation, $topic_id, $recipients_tokens = [])
+    public function __construct($operation, $topic_id, $recipients_tokens = [], string $serverKey = null, string $senderId = null)
     {
-        parent::__construct();
+        parent::__construct($serverKey, $senderId);
 
         if (! is_array($recipients_tokens)) {
             $recipients_tokens = [$recipients_tokens];

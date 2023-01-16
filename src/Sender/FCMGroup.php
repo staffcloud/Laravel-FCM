@@ -16,12 +16,18 @@ class FCMGroup extends HTTPSender
      *
      * @param string $notificationKeyName
      * @param array  $registrationIds
+     * @param string|null $serverKey (optional) The server key
+     * @param string|null $senderId  (optional) The sender Id
      *
      * @return null|string notification_key
      */
-    public function createGroup($notificationKeyName, array $registrationIds)
-    {
-        $request = new GroupRequest(self::CREATE, $notificationKeyName, null, $registrationIds);
+    public function createGroup(
+        $notificationKeyName,
+        array $registrationIds,
+        string $serverKey = null,
+        string $senderId = null
+    ) {
+        $request = new GroupRequest(self::CREATE, $notificationKeyName, null, $registrationIds, $serverKey, $senderId);
 
         $response = $this->client->request('post', $this->url, $request->build());
 
@@ -33,12 +39,19 @@ class FCMGroup extends HTTPSender
      *
      * @param string $notificationKeyName
      * @param string $notificationKey
-     * @param array  $registrationIds     registrationIds to add
+     * @param array  $registrationIds registrationIds to add
+     * @param string|null $serverKey  (optional) The server key
+     * @param string|null $senderId   (optional) The sender Id
      * @return null|string notification_key
      */
-    public function addToGroup($notificationKeyName, $notificationKey, array $registrationIds)
-    {
-        $request = new GroupRequest(self::ADD, $notificationKeyName, $notificationKey, $registrationIds);
+    public function addToGroup(
+        $notificationKeyName,
+        $notificationKey,
+        array $registrationIds,
+        string $serverKey = null,
+        string $senderId = null
+    ) {
+        $request = new GroupRequest(self::ADD, $notificationKeyName, $notificationKey, $registrationIds, $serverKey, $senderId);
         $response = $this->client->request('post', $this->url, $request->build());
 
         return $this->getNotificationToken($response);
@@ -51,12 +64,19 @@ class FCMGroup extends HTTPSender
      *
      * @param string $notificationKeyName
      * @param string $notificationKey
-     * @param array  $registeredIds registrationIds to remove
+     * @param array  $registeredIds  registrationIds to remove
+     * @param string|null $serverKey (optional) The server key
+     * @param string|null $senderId  (optional) The sender Id
      * @return null|string notification_key
      */
-    public function removeFromGroup($notificationKeyName, $notificationKey, array $registeredIds)
-    {
-        $request = new GroupRequest(self::REMOVE, $notificationKeyName, $notificationKey, $registeredIds);
+    public function removeFromGroup(
+        $notificationKeyName,
+        $notificationKey,
+        array $registeredIds,
+        string $serverKey = null,
+        string $senderId = null
+    ) {
+        $request = new GroupRequest(self::REMOVE, $notificationKeyName, $notificationKey, $registeredIds, $serverKey, $senderId);
         $response = $this->client->request('post', $this->url, $request->build());
 
         return $this->getNotificationToken($response);

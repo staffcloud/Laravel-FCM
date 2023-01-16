@@ -39,10 +39,13 @@ class GroupRequest extends BaseRequest
      * @param string $notificationKeyName
      * @param string $notificationKey
      * @param array $registrationIds
+     * @param string|null $serverKey (optional) The server key
+     * @param string|null $senderId  (optional) The sender Id
      */
-    public function __construct($operation, $notificationKeyName, $notificationKey, $registrationIds)
-    {
-        parent::__construct();
+    public function __construct(
+        $operation, $notificationKeyName, $notificationKey, $registrationIds, string $serverKey = null, string $senderId = null
+    ) {
+        parent::__construct($serverKey, $senderId);
 
         $this->operation = $operation;
         $this->notificationKeyName = $notificationKeyName;

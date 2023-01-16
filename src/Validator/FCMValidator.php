@@ -16,13 +16,15 @@ class FCMValidator extends HTTPSender
     /**
      * @see https://developers.google.com/instance-id/reference/server
      *
-     * @param string $token
+     * @param string $token The token to validate
+     * @param string|null $serverKey (optional) The server key
+     * @param string|null $senderId (optional) The sender Id
      *
      * @return bool
      */
-    public function validateToken($token)
+    public function validateToken(string $token, string $serverKey = null, string $senderId = null)
     {
-        $request = new ValidateRequest();
+        $request = new ValidateRequest($serverKey, $senderId);
         try {
             $build = $request->build();
             if (isset($build['json'])) {

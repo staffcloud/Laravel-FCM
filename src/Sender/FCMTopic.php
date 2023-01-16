@@ -22,12 +22,14 @@ class FCMTopic extends HTTPSender
      *
      * @param string $topicId
      * @param string $registrationId
+     * @param string|null $serverKey (optional) The server key
+     * @param string|null $senderId  (optional) The sender Id
      *
      * @return bool
      */
-    public function createTopic($topicId, $registrationId)
+    public function createTopic($topicId, $registrationId, string $serverKey = null, string $senderId = null)
     {
-        $request = new TopicRequest(self::CREATE, $topicId);
+        $request = new TopicRequest(self::CREATE, $topicId, [], $serverKey, $senderId);
         if (is_array($registrationId)) {
             return null;
         }
@@ -45,11 +47,13 @@ class FCMTopic extends HTTPSender
      *
      * @param string $topicId
      * @param array|string $recipientsTokens
+     * @param string|null $serverKey (optional) The server key
+     * @param string|null $senderId  (optional) The sender Id
      * @return bool
      */
-    public function subscribeTopic($topicId, $recipientsTokens)
+    public function subscribeTopic($topicId, $recipientsTokens, string $serverKey = null, string $senderId = null)
     {
-        $request = new TopicRequest(self::SUBSCRIBE, $topicId, $recipientsTokens);
+        $request = new TopicRequest(self::SUBSCRIBE, $topicId, $recipientsTokens, $serverKey, $senderId);
         $response = $this->client->request('post', $this->add_subscription_url, $request->build());
 
         if ($this->isValidResponse($response)) {
@@ -64,11 +68,13 @@ class FCMTopic extends HTTPSender
      *
      * @param string $topicId
      * @param array|string $recipientsTokens
+     * @param string|null $serverKey (optional) The server key
+     * @param string|null $senderId  (optional) The sender Id
      * @return bool
      */
-    public function unsubscribeTopic($topicId, $recipientsTokens)
+    public function unsubscribeTopic($topicId, $recipientsTokens, string $serverKey = null, string $senderId = null)
     {
-        $request = new TopicRequest(self::UNSUBSCRIBE, $topicId, $recipientsTokens);
+        $request = new TopicRequest(self::UNSUBSCRIBE, $topicId, $recipientsTokens, $serverKey, $senderId);
         $response = $this->client->request('post', $this->remove_subscription_url, $request->build());
 
         if ($this->isValidResponse($response)) {
