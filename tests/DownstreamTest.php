@@ -8,7 +8,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use LaravelFCM\Sender\FCMSender;
 
-class ResponseTest extends FCMTestCase
+class DownstreamTest extends FCMTestCase
 {
     public function testItSendANotificationToADevice()
     {

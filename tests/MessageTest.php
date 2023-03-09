@@ -14,7 +14,7 @@ use LaravelFCM\Message\PayloadDataBuilder;
 use LaravelFCM\Message\PayloadNotificationBuilder;
 use LaravelFCM\Sender\FCMSender;
 
-class PayloadTest extends FCMTestCase
+class MessageTest extends FCMTestCase
 {
     public function testItConstructAValidJsonWithOption()
     {
