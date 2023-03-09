@@ -56,16 +56,6 @@ parameters:
 			path: src/Request/BaseRequest.php
 
 		-
-			message: "#^Property LaravelFCM\\\\Request\\\\BaseRequest\\:\\:\\$senderId \\(string\\) does not accept string\\|null\\.$#"
-			count: 1
-			path: src/Request/BaseRequest.php
-
-		-
-			message: "#^Property LaravelFCM\\\\Request\\\\BaseRequest\\:\\:\\$serverKey \\(string\\) does not accept string\\|null\\.$#"
-			count: 1
-			path: src/Request/BaseRequest.php
-
-		-
 			message: "#^Cannot call method get\\(\\) on mixed\\.$#"
 			count: 1
 			path: src/Response/BaseResponse.php

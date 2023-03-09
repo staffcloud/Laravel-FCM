@@ -34,7 +34,7 @@ abstract class BaseRequest
     public function __construct(string $serverKey = null, string $senderId = null)
     {
         // They may have been already filled
-        if ($this->serverKey === null || $this->senderId === null) {
+        if ($serverKey === null || $senderId === null) {
             $config = app('config')->get('fcm.http', []);
             $this->serverKey = $config['server_key'];
             $this->senderId = $config['sender_id'];
